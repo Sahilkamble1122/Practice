@@ -1,0 +1,53 @@
+qts --> given n integer n retrun the no of prime no that are strictly less then n 
+
+solution:
+
+
+package test1;
+
+import java.util.Scanner;
+
+public class dsaQ1 {
+	static int CountPrime(int no) 
+	{
+		if (no<=1){
+			return 0;
+		}
+		if (no == 2) {
+			return 1;
+		}
+		
+		int Count=1;
+		int k =3;
+		while (k!=no) 
+		{
+			boolean isPrime= true;
+		    for (int i = 2; i < k/2; i++) 
+		    {
+		    	if (k%i == 0) 
+		    	{
+			    isPrime= false;
+			    break;
+		    	}
+		    }
+		    if (isPrime) {
+		    	Count++;
+		    }
+		    k++;
+		}
+		return Count;
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("enter the no:");
+		int no = scanner.nextInt();
+		int count=CountPrime(no);
+		if (count==0) {
+			System.out.println("there are 0 prime no");
+		}
+		else
+		System.out.print("total no of prime :" +count);
+		}
+	}
