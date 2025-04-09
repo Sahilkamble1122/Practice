@@ -1,0 +1,34 @@
+package test1;
+
+import java.util.Scanner;
+
+public class dsaQ2 {
+
+	public static void main(String[] args) {
+		int count = 0;
+		int another_count=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the no of bulb");
+		int no = sc.nextInt();
+		while(no != 0) {
+			if (no >= 3) {
+				count++;
+				no=no-3;
+				another_count++;
+				if(another_count==2) {
+					count++;
+					another_count=0;
+				}
+			}
+			if(no == 2) {
+				count ++;
+				no=no-2;
+			}
+			if(no == 1) {
+				count++;
+				no--;
+			}
+		}
+		System.out.println("no of bulb lit:"+count);
+	}
+}
